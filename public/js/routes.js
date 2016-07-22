@@ -17,6 +17,9 @@
     })
     .when('/daily', {
       template: 'daily'
+    })
+    .otherwise({
+      redirectTo: '/'
     });
 
     // $locationProvider.html5Mode(true);
