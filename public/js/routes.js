@@ -5,18 +5,20 @@
   RouteConfig.$inject = ['$routeProvider','$locationProvider'];
 
   function RouteConfig($routeProvider, $locationProvider){
+    var baseFolder = "/html/views/"
     $routeProvider
     .when('/', {
-      template: 'home'
+      templateUrl: baseFolder + 'home.html',
+      controller: 'HomeController'
     })
     .when('/hourly', {
-      template: 'hourly'
+      templateUrl: baseFolder + 'hourly.html'
     })
     .when('/minutely', {
-      template: 'minutely'
+      templateUrl: baseFolder + 'minutely.html'
     })
     .when('/daily', {
-      template: 'daily'
+      templateUrl: baseFolder + 'daily.html'
     })
     .otherwise({
       redirectTo: '/'
