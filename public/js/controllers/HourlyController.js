@@ -1,10 +1,15 @@
 (function(){
   angular.module('ngweather')
-         .contorller('HourlyController', HourlyController)
+         .controller('HourlyController', HourlyController)
 
-  HourlyController.$inject = [];
+  HourlyController.$inject = ['$scope','WeatherService'];
 
-  function HourlyController(){
+  function HourlyController($scope, WeatherService){
+    $scope.seeWeather = seeWeather;
+
+    function seeWeather(){
+      console.log(WeatherService.weather);
+    }
 
   }
-})
+})();

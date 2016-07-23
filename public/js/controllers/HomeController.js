@@ -8,9 +8,14 @@
     $scope.updateHourly = updateHourly;
     $scope.updateMinutely = updateMinutely;
     $scope.updateDaily = updateDaily;
+    $scope.weather = WeatherService.weather
 
     function updateHourly(latitude, longitude){
-      WeatherService.getHourlyData(latitude, longitude);
+      WeatherService.getHourlyData(latitude, longitude)
+                    .then(function(){
+                      $scope.weather = WeatherService.weather;
+                      console.log($scope.weather);
+                    })
     }
     function updateMinutely(latitude, longitude){
       WeatherService.getMinutelyData(latitude, longitude);
