@@ -18,10 +18,18 @@
                     })
     }
     function updateMinutely(latitude, longitude){
-      WeatherService.getMinutelyData(latitude, longitude);
+      WeatherService.getMinutelyData(latitude, longitude)
+                    .then(function(){
+                      $scope.weather = WeatherService.weather;
+                      console.log($scope.weather);
+                    });
     }
     function updateDaily(latitude, longitude){
-      WeatherService.getDailyData(latitude, longitude);
+      WeatherService.getDailyData(latitude, longitude)
+                    .then(function(){
+                      $scope.weather = WeatherService.weather;
+                      console.log($scope.weather);
+                    });
     }
   }
 })();
