@@ -5,15 +5,14 @@
   HourlyController.$inject = ['$scope','WeatherService'];
 
   function HourlyController($scope, WeatherService){
-    $scope.seeWeather = seeWeather;
+    $scope.hourlyData = WeatherService.weather;
 
-    function seeWeather(){
-      $scope.weather = WeatherService.weather;
-      $scope.latitude = WeatherService.weather.latitude;
-      $scope.longitude = WeatherService.weather.longitude;
-      $scope.hourly = WeatherService.weather.hourly;
-      console.log($scope.longitude,$scope.hourly);
-    }
+
+    $scope.$watch(function(){
+      return WeatherService.weather;
+    }, function(value){
+      $scope.hourlyData = value;
+    });
 
   }
 })();
