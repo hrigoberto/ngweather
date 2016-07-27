@@ -4,14 +4,14 @@
 
   DailyController.$inject = ['$scope','WeatherService'];
 
-  function DailyController(){
+  function DailyController($scope, WeatherService){
     $scope.dailyData = WeatherService.weather;
 
 
     $scope.$watch(function(){
       return WeatherService.weather;
     }, function(value){
-      $scope.hourlyData = value;
+      $scope.dailyData = value;
     });
 
   }
