@@ -8,12 +8,11 @@
     var baseFolder = "/html/views/"
     $routeProvider
     .when('/', {
-      templateUrl: baseFolder + 'home.html',
-      controller: 'HomeController',
+      templateUrl: baseFolder + 'home.html'
     })
     .when('/hourly', {
       templateUrl: baseFolder + 'hourly.html',
-      controller: 'HourlyController',
+      controller: 'HourlyController'
     })
     .when('/minutely', {
       templateUrl: baseFolder + 'minutely.html',
