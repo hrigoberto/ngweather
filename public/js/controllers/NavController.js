@@ -8,6 +8,6 @@
       var locationCookie = $cookies.latlon;
 
       function updateLocation(latitude, longitude){
-        $cookies.latlon
+        $cookies.latlon = 
       }
 }());
