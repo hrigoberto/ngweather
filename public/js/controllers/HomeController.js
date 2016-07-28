@@ -2,16 +2,16 @@
   angular.module('ngweather')
          .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$scope', 'WeatherService'];
+  HomeController.$inject = ['$scope', '$cookies', 'WeatherService'];
 
-  function HomeController($scope, WeatherService){
+  function HomeController($scope, $cookies, WeatherService){
     $scope.updateHourly = updateHourly;
     $scope.updateMinutely = updateMinutely;
     $scope.updateDaily = updateDaily;
     $scope.weather = WeatherService.weather
-    $scope.latitude = 29;
-    $scope.longitude = -82;
-    
+    // $scope.latitude = ;
+    // $scope.longitude = -82;
+
     function updateHourly(latitude, longitude){
       WeatherService.getHourlyData(latitude, longitude)
                     .then(function(){

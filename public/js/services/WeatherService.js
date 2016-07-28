@@ -16,11 +16,12 @@
       getHourlyData: getHourlyData,
       getMinutelyData: getMinutelyData,
       getDailyData: getDailyData,
+      getLatitude: getLatitude,
       weather: {}
     };
     return service;
 
-
+    function getLatitude()
 
     function getHourlyData(lat, lon){
       var url = baseUrl + 'forecast/hourly/' + lat + ',' + lon;
