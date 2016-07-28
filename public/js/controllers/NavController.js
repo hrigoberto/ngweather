@@ -5,7 +5,7 @@
   NavController.$inject = ['$scope', 'LocationService','WeatherService'];
 
   function NavController($scope, LocationService, WeatherService){
-    $scope.updateLocation = updateLocation;
+    // $scope.updateLocation = updateLocation;
     $scope.updateHourly = updateHourly;
     $scope.updateMinutely = updateMinutely;
     $scope.updateDaily = updateDaily;
@@ -34,9 +34,9 @@
                     });
     }
 
-    function updateLocation(latitude, longitude){
-      LocationService.updateLocation(latitude, longitude);
-    }
+    // function updateLocation(latitude, longitude){
+    //   LocationService.updateLocation(latitude, longitude);
+    // }
   };
 
 }());
