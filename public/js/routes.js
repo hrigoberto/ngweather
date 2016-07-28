@@ -14,11 +14,6 @@
     .when('/hourly', {
       templateUrl: baseFolder + 'hourly.html',
       controller: 'HourlyController',
-      resolve: {
-        initialData: function(WeatherService){
-          return WeatherService.weather;
-        }
-      }
     })
     .when('/minutely', {
       templateUrl: baseFolder + 'minutely.html',
