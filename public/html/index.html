@@ -18,6 +18,11 @@
         </div>
     </div>
     <div class="row">
+      <div class="form-group col-md-12">
+        <input type="text" class="form-control" ng-model="location" placeholder="City and State:">
+      </div>
+    </div>
+    <div class="row">
       <!-- <div class="col-md-2 col-md-offset-2">
         <button class="btn btn-primary btn-block" ng-click="updateLocation(latitude, longitude)">Set Location</button>
       </div> -->
@@ -34,7 +39,7 @@
   </nav>
   <br>
   <br>
-  
+
   <ng-view></ng-view>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
@@ -48,6 +53,7 @@
   <script src="js/controllers/MinutelyController.js"></script>
   <script src="js/controllers/DailyController.js"></script>
   <script src="js/services/WeatherService.js"></script>
+  <script src="js/services/GeoLocationService.js"></script>
   <script src="js/services/LocationService.js"></script>
 </body>
 </html>

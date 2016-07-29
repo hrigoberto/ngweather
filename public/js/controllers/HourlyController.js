@@ -2,12 +2,13 @@
   angular.module('ngweather')
          .controller('HourlyController', HourlyController)
 
-  HourlyController.$inject = ['$scope','WeatherService', 'LocationService'];
+  HourlyController.$inject = ['$scope','WeatherService', 'LocationService', 'GeoLocation'];
 
-  function HourlyController($scope, WeatherService, LocationService){
+  function HourlyController($scope, WeatherService, LocationService, GeoLocation){
     $scope.hourlyData = WeatherService.weather;
     $scope.latitude = LocationService.latStore
     $scope.longitude = LocationService.lonStore;
+    $scope.formattedAddress = GeoLocation.formattedAddress;
     $scope.summaryLookup = {
       'Drizzle': 'There will be a light drizzle',
       'Partly Cloudy': 'It will be partly cloudy',
@@ -18,9 +19,13 @@
 
 
     $scope.$watch(function(){
-      return WeatherService.weather;
-    }, function(value){
+      console.log("value:", value);
       $scope.hourlyData = value;
+    })
+    $scope.$watch(function(){
+      return GeoLocation.formattedAddress;
+    }, function(value){
+      $scope.formattedAddress = value;
     });
 
   }
