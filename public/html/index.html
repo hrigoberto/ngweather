@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
 </head>
 <body>
-  <div ng-controller="NavController" style="margin-top: 120px;">
+  <nav ng-controller="NavController" class="navbar navbar-fixed-top well">
     <div class="row">
         <div class="form-group col-md-3 col-md-offset-3">
           <input type="text" class="form-control" ng-model="latitude" placeholder="Latitude:">
@@ -31,7 +31,10 @@
         <a href="#/daily" class="btn btn-primary btn-block" ng-click="updateDaily(latitude, longitude)">Daily</a>
       </div>
     </div>
-  </div>
+  </nav>
+  <br>
+  <br>
+  
   <ng-view></ng-view>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
