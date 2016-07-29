@@ -25,7 +25,7 @@
                   });
     };
 
-    function updateMinutely(latitude, longitude){
+    function updateMinutely(location){
       console.log('Location:', location);
       GeoLocation.getLocationData(location)
                  .then(function(locationFromGoogle){
@@ -40,8 +40,15 @@
                     });
     };
 
-    function updateDaily(latitude, longitude){
-      WeatherService.getDailyData(latitude, longitude)
+    function updateDaily(location){
+      console.log('Location:', location);
+      GeoLocation.getLocationData(location)
+                 .then(function(locationFromGoogle){
+                   console.log('responseFromGoogle', locationFromGoogle);
+                   var lat = locationFromGoogle.lat;
+                   var lon = locationFromGoogle.lng;
+                   return WeatherService.getDailyData(lat, lon);
+                 })
                     .then(function(){
                       $scope.weather = WeatherService.weather;
                       console.log($scope.weather);
