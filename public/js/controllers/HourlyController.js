@@ -16,13 +16,6 @@
       'Clear': 'Clear skies'
     };
 
-    function updateHourly(latitude, longitude){
-      WeatherService.getHourlyData(latitude, longitude)
-                    .then(function(){
-                      $scope.weather = WeatherService.weather;
-                      console.log($scope.weather);
-                    })
-    }
 
     $scope.$watch(function(){
       return WeatherService.weather;

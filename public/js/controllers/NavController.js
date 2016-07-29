@@ -26,7 +26,14 @@
     };
 
     function updateMinutely(latitude, longitude){
-      WeatherService.getMinutelyData(latitude, longitude)
+      console.log('Location:', location);
+      GeoLocation.getLocationData(location)
+                 .then(function(locationFromGoogle){
+                    console.log('responseFromGoogle', locationFromGoogle);
+                    var lat = locationFromGoogle.lat;
+                    var lon = locationFromGoogle.lng;
+                    return WeatherService.getMinutelyData(lat, lon);
+                 })
                     .then(function(){
                       $scope.weather = WeatherService.weather;
                       console.log($scope.weather);
