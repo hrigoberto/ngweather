@@ -9,9 +9,10 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2 well">
       <div class="row">
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
           <img src="images/{{minutelyData.minutely.icon}}.png" alt="">
-        </div>
+        </div> -->
+        <i class="wi wi-forecast-io-{{minutelyData.minutely.icon}}" style="font-size: 60px"></i>
         <div class="col-md-6">
           <h5>{{ minutelyData.minutely.data[0].time * 1000 | date: 'hh'}}:{{ minutelyData.minutely.data[0].time * 1000 | date: 'mm'}}</h5>
         </div>

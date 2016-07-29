@@ -11,9 +11,10 @@
   <div class="row" ng-repeat="card in hourlyData.hourly.data">
     <div class="col-md-8 col-md-offset-2 well">
       <div class="row">
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <img src="images/{{card.icon}}.png" alt="">
-        </div>
+        </div> -->
+        <i class="wi wi-forecast-io-{{card.icon}}" style="font-size: 60px"></i>
         <div class="col-md-4">
           <h3>Temperature: {{ card.temperature}}&deg;F</h3>
         </div>

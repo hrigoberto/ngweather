@@ -11,6 +11,22 @@ body {
 
 }
 
+#navigation,.navbar .navbar-default{
+  background-image: url('../images/earthbg.jpg');
+
+  height: 150px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 2px 4px 5px #04080a;
+}
+
+.well {
+  border-radius: 1%;
+}
+
 .transition.ng-enter,
 .transition.ng-leave {
   transition: all 1s ease;
