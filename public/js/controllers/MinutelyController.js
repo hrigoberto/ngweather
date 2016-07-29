@@ -2,9 +2,9 @@
   angular.module('ngweather')
          .controller('MinutelyController', MinutelyController);
 
-  MinutelyController.$inject = ['$scope', 'WeatherService'];
+  MinutelyController.$inject = ['$scope', 'WeatherService', 'LocationService'];
 
-  function MinutelyController($scope, WeatherService){
+  function MinutelyController($scope, WeatherService, LocationService){
     $scope.minutelyData = WeatherService.weather;
 
 
