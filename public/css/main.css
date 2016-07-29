@@ -10,3 +10,21 @@ body {
 
 
 }
+
+.transition.ng-enter,
+.transition.ng-leave {
+  transition: all 1s ease;
+}
+
+.transition.ng-enter {
+    left: 100%;
+}
+.transition.ng-enter-active {
+    left: 0;
+}
+.transition.ng-leave {
+    left: 0;
+}
+.transition.ng-leave-active {
+    left: -100%;
+}
