@@ -2,9 +2,9 @@
   angular.module('ngweather')
          .controller('HourlyController', HourlyController)
 
-  HourlyController.$inject = ['$scope','WeatherService', 'LocationService'];
+  HourlyController.$inject = ['$scope','WeatherService', 'LocationService', 'GeoLocation'];
 
-  function HourlyController($scope, WeatherService, LocationService){
+  function HourlyController($scope, WeatherService, LocationService, GeoLocation){
     $scope.hourlyData = WeatherService.weather;
     $scope.latitude = LocationService.latStore
     $scope.longitude = LocationService.lonStore;
@@ -22,6 +22,8 @@
     }, function(value){
       $scope.hourlyData = value;
     });
+
+
 
   }
 })();

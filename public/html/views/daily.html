@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <h2 class="text-center">
-        Latitude: {{ dailyData.latitude }}, Longitude: {{ dailyData.longitude }}
+
       </h2>
     </div>
   </div>
@@ -35,7 +35,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6" ng-repeat="card in dailyData.daily" style="display: inline-block">
+  <div class="col-md-8 col-md-offset-2" ng-repeat="card in dailyData.daily track by $index" ng-if="$index !== 0">
     <div class="col-md-12 well">
       <div class="row">
         <!-- <div class="col-md-6">

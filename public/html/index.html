@@ -10,15 +10,7 @@
 <body>
   <nav ng-controller="NavController" class="navbar navbar-fixed-top well" id="navigation">
     <div class="row">
-        <div class="form-group col-md-3 col-md-offset-3 col-sm-3 col-sm-offset-3 col-xs-6">
-          <input type="text" class="form-control" ng-model="latitude" placeholder="Latitude:">
-        </div>
-        <div class="form-group col-md-3 col-sm-3 col-xs-6">
-          <input type="text" class="form-control" ng-model="longitude" placeholder="Longitude:">
-        </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-md-12">
+      <div class="form-group col-md-6 col-md-offset-3">
         <input type="text" class="form-control" ng-model="location" placeholder="City and State:">
       </div>
     </div>
@@ -35,8 +27,11 @@
       </div>
       <div class="col-md-2 col-sm-2 col-xs-4">
         <a href="#/daily" class="btn btn-primary btn-block" ng-click="updateDaily(location)">Daily</a>
-
       </div>
+
+    </div>
+    <div class="row">
+      <h4 class="text-center">{{ formattedAddress }}</h4>
     </div>
   </nav>
   <br>

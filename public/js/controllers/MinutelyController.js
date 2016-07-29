@@ -2,10 +2,11 @@
   angular.module('ngweather')
          .controller('MinutelyController', MinutelyController);
 
-  MinutelyController.$inject = ['$scope', 'WeatherService', 'LocationService'];
+  MinutelyController.$inject = ['$scope', 'WeatherService', 'LocationService', 'GeoLocation'];
 
-  function MinutelyController($scope, WeatherService, LocationService){
+  function MinutelyController($scope, WeatherService, LocationService, GeoLocation){
     $scope.minutelyData = WeatherService.weather;
+
 
 
     $scope.$watch(function(){
@@ -13,6 +14,7 @@
     }, function(value){
       $scope.minutelyData = value;
     });
+
 
   }
 })();

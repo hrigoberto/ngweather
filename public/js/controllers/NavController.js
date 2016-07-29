@@ -9,6 +9,13 @@
     $scope.updateHourly = updateHourly;
     $scope.updateMinutely = updateMinutely;
     $scope.updateDaily = updateDaily;
+    $scope.formattedAddress = GeoLocation.formattedAddress;
+
+    $scope.$watch(function(){
+      return GeoLocation.formattedAddress;
+    }, function(value){
+      $scope.formattedAddress = value;
+    });
 
     function updateHourly(location){
       console.log('Location:', location);
