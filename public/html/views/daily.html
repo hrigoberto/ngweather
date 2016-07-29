@@ -7,29 +7,29 @@
     </div>
   </div>
   <div class="row jumbotron">
-    <div class="col-md-8 col-md-offset-2 well">
+    <div class="col-md-12 well">
       <div class="row">
         <div class="col-md-6">
           <img src="images/{{dailyData.dailyIcon}}.png" alt="">
         </div>
         <div class="col-md-6">
-          <h5>{{ dailyData.daily[0].time * 1000 | date }}</h5>
+          <h4>{{ dailyData.daily[0].time * 1000 | date }}</h4>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-         <h4>{{ dailyData.dailySummary }}</h4>
+         <h3 class="text-center">{{ dailyData.dailySummary }}</h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
-          <h5>Temperature: {{dailyData.daily[0].tempMin}}&deg;F/{{dailyData.daily[0].tempMax}}&deg;F</h5>
+        <div class="col-md-3 col-md-offset-2">
+          <h4>Temperature: {{dailyData.daily[0].tempMin}}&deg;F/{{dailyData.daily[0].tempMax}}&deg;F</h4>
         </div>
-        <div class="col-md-4">
-          <h5>Precipitation Probability: {{dailyData.daily[0].precipProb * 100 | number: 0}}%</h5>
+        <div class="col-md-3">
+          <h4>Precipitation Probability: {{dailyData.daily[0].precipProb * 100 | number: 0}}%</h4>
         </div>
-        <div class="col-md-4">
-          <h5>Humidity: {{dailyData.daily[0].humidity * 100 | number: 0}}%</h5>
+        <div class="col-md-3">
+          <h4>Humidity: {{dailyData.daily[0].humidity * 100 | number: 0}}%</h4>
         </div>
       </div>
     </div>
