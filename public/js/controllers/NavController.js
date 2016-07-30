@@ -10,24 +10,15 @@
     $scope.updateMinutely = updateMinutely;
     $scope.updateDaily = updateDaily;
     $scope.formattedAddress = GeoLocation.formattedAddress;
-    $scope.units = "F";
-    $scope.changeUnits = changeUnits;
+    $scope.units = WeatherService.units;
     $scope.switchUnits = switchUnits;
 
     function switchUnits(){
-      if($scope.units === "F"){
-        $scope.units === "C";
+      if(WeatherService.units === "F"){
+        WeatherService.units === "C";
       } else {
-        $scope.units === "F";
+        WeatherService.units === "F";
       }
-    };
-
-    function changeUnits(number, unit){
-      if(unit === "C"){
-        return (9/5)(number) + 32;
-      } else {
-        return number
-      ;}
     };
 
 

@@ -16,14 +16,11 @@
       getHourlyData: getHourlyData,
       getMinutelyData: getMinutelyData,
       getDailyData: getDailyData,
-      weather: {}
+      weather: {},
+      units: "F"
     };
     return service;
 
-
-    function changeUnits(number, unit){
-      
-    }
 
     function getHourlyData(lat, lon){
       var url = baseUrl + 'forecast/hourly/' + lat + ',' + lon;
@@ -45,10 +42,12 @@
 
     function getDailyData(lat, lon){
       var url = baseUrl + 'forecast/Daily/' + lat + ',' + lon;
+      console.log(service.units);
       return $http.get(url, config)
                   .then(function(response){
                     service.weather = response.data;
                     console.log(service.weather);
+
                   });
     }
   };

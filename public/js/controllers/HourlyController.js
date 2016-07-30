@@ -15,7 +15,17 @@
       'Rain': 'There will be rain',
       'Clear': 'Clear skies'
     };
+    $scope.changeUnits = changeUnits;
+    $scope.unit = WeatherService.units
 
+
+    function changeUnits(number, unit){
+        if(WeatherService.units === "C"){
+          return (9/5)(number) + 32;
+        } else {
+          return number;
+        }
+      };
 
     $scope.$watch(function(){
       return WeatherService.weather;
