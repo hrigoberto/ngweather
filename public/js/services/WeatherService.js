@@ -21,6 +21,9 @@
     return service;
 
 
+    function changeUnits(number, unit){
+      
+    }
 
     function getHourlyData(lat, lon){
       var url = baseUrl + 'forecast/hourly/' + lat + ',' + lon;
